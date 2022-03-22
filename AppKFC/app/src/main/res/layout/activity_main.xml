@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:onClick="login"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -28,45 +29,45 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="119dp"
-            android:layout_height="108dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline8"
-            app:srcCompat="@drawable/logo" />
-        <!--disfruta-->
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="arial"
-            android:gravity="center_horizontal"
-            android:text="DISFRUTA DEL"
-            android:textColor="@color/white"
-            android:textSize="45dp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="@+id/guideline7"
-            tools:layout_editor_absoluteX="16dp" />
+        android:id="@+id/imageView"
+        android:layout_width="119dp"
+        android:layout_height="108dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:srcCompat="@drawable/logo" />
+    <!--disfruta-->
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="arial"
+        android:gravity="center_horizontal"
+        android:text="DISFRUTA DEL"
+        android:textColor="@color/white"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        tools:layout_editor_absoluteX="16dp" />
 
-        <!--sabor KFC -->
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="arial"
-            android:gravity="center_horizontal"
-            android:text="SABOR KFC"
-            android:textColor="@color/white"
-            android:textSize="60dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline6"
-            app:layout_constraintStart_toStartOf="parent" />
-        <!--hola que bueno verte-->
+    <!--sabor KFC -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="arial"
+        android:gravity="center_horizontal"
+        android:text="SABOR KFC"
+        android:textColor="@color/white"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!--hola que bueno verte-->
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -83,7 +84,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         tools:ignore="MissingConstraints" />
 
-        <!--linear con cardview-->
+    <!--linear con cardview-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
@@ -201,142 +202,143 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="454dp" />
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="454dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="641dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="641dp" />
 
-        <GridLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline5">
+    <GridLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/white"
-                app:cardCornerRadius="4dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            app:cardCornerRadius="4dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kcf"
-                        android:paddingStart="8dp"
-                        android:paddingTop="10dp"
-                        android:paddingRight="8dp"
-                        android:paddingBottom="15dp"
-                        android:text="@string/repite"
-                        android:textColor="@color/red"
-                        android:textSize="11dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kcf"
+                    android:paddingStart="8dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/repite"
+                    android:textColor="@color/red"
+                    android:textSize="11dp">
 
-                    </TextView>
+                </TextView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/kcf"
-                        android:paddingBottom="8dp"
-                        android:text="@string/crea"
-                        android:textColor="@color/black"
-                        android:textSize="10dp">
-
-                    </TextView>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="70dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/white"
-                app:cardCornerRadius="4dp">
-
-                <Button
-                    android:id="@+id/button_cupones"
-                    android:layout_width="match_parent"
-                    android:layout_height="73dp"
-                    android:backgroundTint="@color/white"
-                    android:drawableTop="@drawable/ic_coupon_2_svgrepo_com"
-                    android:text=" Cupones"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/kcf"
+                    android:paddingBottom="8dp"
+                    android:text="@string/crea"
                     android:textColor="@color/black"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button_inten"
-                    app:layout_constraintVertical_bias="0.975"
-                    tools:ignore="TouchTargetSizeCheck"
-                    tools:layout_editor_absoluteX="164dp" />
-            </androidx.cardview.widget.CardView>
+                    android:textSize="10dp">
 
-        </GridLayout>
+                </TextView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="311dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="172dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            app:cardCornerRadius="4dp">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="54dp" />
+            <Button
+                android:id="@+id/button_cupones"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:backgroundTint="@color/white"
+                android:drawableTop="@drawable/ic_coupon_2_svgrepo_com"
+                android:onClick="login"
+                android:text=" Cupones"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_inten"
+                app:layout_constraintVertical_bias="0.975"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="164dp" />
+        </androidx.cardview.widget.CardView>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="205dp" />
+    </GridLayout>
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="35dp"
-            android:layout_height="25dp"
-            android:background="@color/grayTrans"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="311dp" />
 
-            app:layout_constraintBottom_toTopOf="@+id/guideline8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.906"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.551"
-            app:srcCompat="@drawable/ic_bxs_user"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="172dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="54dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:background="@color/grayTrans"
+
+        android:onClick="login"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551"
+        app:srcCompat="@drawable/ic_bxs_user"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

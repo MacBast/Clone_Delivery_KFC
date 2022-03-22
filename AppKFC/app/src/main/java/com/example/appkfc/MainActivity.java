@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
         }
+    }
 
+    //Metodo boton de login
+    public void  login (View view){
+        Intent login = new Intent(this, LoginActivity.class);
+        startActivity(login);
     }
 }

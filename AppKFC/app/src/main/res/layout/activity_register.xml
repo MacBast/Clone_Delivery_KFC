@@ -6,29 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".registerActivity">
 
-    <Button
-        android:id="@+id/button_iniciar"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="INICIAR SESION"
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/grayTrans"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068"
-        tools:layout_editor_absoluteX="3dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.066">
 
-    <Button
-        android:id="@+id/button_registrate"
-        android:layout_width="205dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="REGISTRATE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067"
-        tools:layout_editor_absoluteX="208dp"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/button_iniciar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="INICIAR SESION"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button_registrate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="REGISTRATE"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -123,6 +128,7 @@
         android:layout_width="37dp"
         android:layout_height="29dp"
         android:backgroundTint="@color/white"
+        android:onClick="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.008"
@@ -131,5 +137,12 @@
         app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/flecha"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
