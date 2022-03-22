@@ -23,19 +23,20 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
 }else{
     echo "inmelo papi de malas";
 }
+    _GET trae la informacion que se ponga deaceurdo en la URL
 
 */
 require_once(dirname(__DIR__)."../../db/db_config.php");
 if($_SERVER['REQUEST_METHOD']=="POST"){
-    $data = json_decode(file_get_contents('php://input'), TRUE);    
-    var_dump($data);
-    $nombre= $data['nombre'];
+    //var_dump($data);
+    $data = json_decode(file_get_contents('php://input'), true);    
+    $identification= $data['identification'];
     $db =new DBConfig();
     $dbConnection = $db->connect();
-    $query = "SELECT * FROM users WHERE fullname='$nombre'";
+    $query = "SELECT * FROM users WHERE identification='$identification'";
     $users = $dbConnection->query($query)->fetchall(PDO::FETCH_ASSOC);
     header('Content-Type: application/json');
-    echo(json_encode($users[0]));
+    echo (json_encode($users[0]));
 }else{
-    echo "inmelo papi de malas";
+    echo "No hay conexion";
 }

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppKFC</string>
+    <string name="resta">RECOGER EN RESTAURANTE</string>
+    <string name="NEXT">continuar</string>
+    <string name="pedir">Pedir ahora</string>
+    <string name="funciona">¿CÓMO FUNCIONA?</string>
+    <string name="repite">REPITE TUS COMPRAS</string>
+    <string name="crea">CREA TU CUENTA</string>
+    <string name="cupon">CUPONES</string>
+    <string name="dir">Calle 29C 39-53</string>
+</resources>
