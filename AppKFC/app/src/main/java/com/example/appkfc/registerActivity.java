@@ -20,4 +20,10 @@ public class registerActivity extends AppCompatActivity {
         startActivity(login);
 
     }
+
+    public void  register2 (View view) {
+        Intent register2 = new Intent(this, register2.class);
+        startActivity(register2);
+
+    }
 }
