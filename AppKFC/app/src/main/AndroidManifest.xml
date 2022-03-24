@@ -11,14 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppKFC">
         <activity
-<<<<<<< HEAD
+
             android:name=".TerminosActivity"
             android:exported="false" />
         <activity
-            android:name=".sesion"
-=======
             android:name=".register2"
->>>>>>> RamaRegistro
             android:exported="false" />
 
         <meta-data

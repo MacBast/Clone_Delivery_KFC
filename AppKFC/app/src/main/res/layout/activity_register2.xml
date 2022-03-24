@@ -16,6 +16,7 @@
         android:textAlignment="center"
         android:textColor="@color/grayTrans"
         android:textSize="16dp"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
