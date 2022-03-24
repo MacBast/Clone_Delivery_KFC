@@ -31,4 +31,10 @@ public class registerActivity extends AppCompatActivity {
         Intent iniciar = new Intent(this, sesion.class);
         startActivity(iniciar);
     }
+
+    public void  register2 (View view) {
+        Intent register2 = new Intent(this, register2.class);
+        startActivity(register2);
+
+    }
 }
