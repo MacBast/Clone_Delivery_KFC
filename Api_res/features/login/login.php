@@ -10,7 +10,7 @@ if( $_SERVER['REQUEST_METHOD'] == "POST"){
     $query = "SELECT * FROM users WHERE identification='$identification'";
     $users = $dbConnection->query($query)->fetchall(PDO::FETCH_ASSOC);
     header('Content-Type: application/json');
-    echo (json_encode($users));
+    echo (json_encode($users[0]));
 }else{
     echo "No hay conexion";
 }
