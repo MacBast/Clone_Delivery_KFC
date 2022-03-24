@@ -18,7 +18,6 @@ public class registerActivity extends AppCompatActivity {
     public void  login (View view) {
         Intent login = new Intent(this, LoginActivity.class);
         startActivity(login);
-
     }
 
     //Metodo boton de registrarme
@@ -29,7 +28,7 @@ public class registerActivity extends AppCompatActivity {
 
     //Metodo boton de iniciar sesion
     public void  iniciar (View view){
-        Intent iniciar = new Intent(this, InicioActivity.class);
+        Intent iniciar = new Intent(this, sesion.class);
         startActivity(iniciar);
     }
 }

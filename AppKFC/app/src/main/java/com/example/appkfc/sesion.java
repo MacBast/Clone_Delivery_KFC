@@ -1,16 +1,17 @@
 package com.example.appkfc;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class InicioActivity extends AppCompatActivity {
+public class sesion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
+        setContentView(R.layout.activity_sesion);
     }
 
     //Metodo boton de Login
@@ -21,7 +22,7 @@ public class InicioActivity extends AppCompatActivity {
 
     //Metodo boton de iniciar sesion
     public void  iniciar (View view){
-        Intent iniciar = new Intent(this, InicioActivity.class);
+        Intent iniciar = new Intent(this, sesion.class);
         startActivity(iniciar);
     }
 
