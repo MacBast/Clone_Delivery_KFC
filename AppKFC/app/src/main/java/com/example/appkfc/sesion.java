@@ -6,24 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class registerActivity extends AppCompatActivity {
+public class sesion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_sesion);
     }
 
-    //Metodo boton de login
+    //Metodo boton de Login
     public void  login (View view) {
         Intent login = new Intent(this, LoginActivity.class);
         startActivity(login);
-    }
-
-    //Metodo boton de registrarme
-    public void  registrarme (View view){
-        Intent registrarme = new Intent(this, registerActivity.class);
-        startActivity(registrarme);
     }
 
     //Metodo boton de iniciar sesion
@@ -32,9 +26,9 @@ public class registerActivity extends AppCompatActivity {
         startActivity(iniciar);
     }
 
-    public void  register2 (View view) {
-        Intent register2 = new Intent(this, register2.class);
-        startActivity(register2);
-
+    //Metodo boton de registrarme
+    public void  registrarme (View view){
+        Intent registrarme = new Intent(this, registerActivity.class);
+        startActivity(registrarme);
     }
 }

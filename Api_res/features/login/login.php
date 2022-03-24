@@ -1,7 +1,7 @@
 <?php
 
 require_once(dirname(__DIR__)."../../db/db_config.php");
-if($_SERVER['REQUEST_METHOD']=="POST"){
+if( $_SERVER['REQUEST_METHOD'] == "POST"){
     //var_dump($data);
     $data = json_decode(file_get_contents('php://input'), true);    
     $identification= $data['identification'];
