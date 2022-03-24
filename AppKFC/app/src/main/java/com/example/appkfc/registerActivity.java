@@ -20,4 +20,16 @@ public class registerActivity extends AppCompatActivity {
         startActivity(login);
 
     }
+
+    //Metodo boton de registrarme
+    public void  registrarme (View view){
+        Intent registrarme = new Intent(this, registerActivity.class);
+        startActivity(registrarme);
+    }
+
+    //Metodo boton de iniciar sesion
+    public void  iniciar (View view){
+        Intent iniciar = new Intent(this, InicioActivity.class);
+        startActivity(iniciar);
+    }
 }

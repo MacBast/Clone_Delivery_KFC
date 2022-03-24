@@ -27,8 +27,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //Metodo boton de iniciar sesion
-    public void  iniciar (View view){
-        Intent iniciar = new Intent(this, registerActivity.class);
+    public void  iniciar  (View view){
+        Intent iniciar = new Intent(this, InicioActivity.class);
         startActivity(iniciar);
+    }
+
+    //Metodo boton de terminos y condiciones
+    public void  terminos  (View view){
+        Intent terminos = new Intent(this, TerminosActivity.class);
+        startActivity(terminos);
     }
 }

@@ -125,6 +125,7 @@
         android:layout_height="60dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:onClick="terminos"
         android:text="  TERMINOS LEGALES"
         android:textAlignment="textStart"
         android:textColor="@color/black"
