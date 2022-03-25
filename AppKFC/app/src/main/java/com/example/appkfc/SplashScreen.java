@@ -18,7 +18,7 @@ public class SplashScreen extends Activity {
         setContentView(R.layout.activity_splash_screen);
             startTimer();
         }
-
+//splash
     private void startTimer() {
         (new CountDownTimer(5000L, 1000L) {
             public void onTick(long millisUntilFinished) { }
