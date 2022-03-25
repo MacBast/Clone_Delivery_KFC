@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     package="com.example.appkfc" >
 
-=======
-    package="com.example.appkfc">
 <uses-permission android:name="android.permission.INTERNET"/>
->>>>>>> d84478509462a811127587d160d959994d335c4d
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,14 +24,10 @@
 
         </activity>
         <activity
-<<<<<<< HEAD
             android:name=".TerminosActivity"
             android:exported="false" />
         <activity
-            android:name=".sesion"
-=======
             android:name=".register2"
->>>>>>> RamaRegistro
             android:exported="false" />
 
         <meta-data
