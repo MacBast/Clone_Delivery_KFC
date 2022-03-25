@@ -33,7 +33,7 @@ public class registerActivity extends AppCompatActivity {
         idEmail=findViewById(R.id.editTextTextPassword);
 
         BsaveRR= findViewById(R.id.button_continuar);
-        loginUser();
+
     }
 
     public String UserS(){
@@ -44,7 +44,9 @@ public class registerActivity extends AppCompatActivity {
                 String xidEmail = idEmail.getText().toString().trim();
             }
         });
+        loginUser();
         return null;
+
     }
 
     public String EmailS(){
