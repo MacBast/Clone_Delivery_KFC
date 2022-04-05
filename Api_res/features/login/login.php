@@ -2,12 +2,11 @@
 
 require_once(dirname(__DIR__)."../../db/db_config.php");
 if( $_SERVER['REQUEST_METHOD'] == "POST"){
-    //var_dump($data);
     $data = json_decode(file_get_contents('php://input'), true);    
-    $identification= $data['identification'];
+    $emailApi= $data['email'];
     $db =new DBConfig();
     $dbConnection = $db->connect();
-    $query = "SELECT * FROM users WHERE identification='$identification'";
+    $query = "SELECT * FROM users WHERE email='$emailApi'";
     $users = $dbConnection->query($query)->fetchall(PDO::FETCH_ASSOC);
     header('Content-Type: application/json');
     echo (json_encode($users[0]));

@@ -20,75 +20,61 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class registerActivity extends AppCompatActivity {
-
-    EditText idUser, idEmail;
+    EditText idUserRe, idPssRE;
     Button BsaveRR;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        idUser=findViewById(R.id.editTextTextEmailAddress);
-        idEmail=findViewById(R.id.editTextTextPassword);
+        idUserRe=findViewById(R.id.edtxcorreoregistro);
+        idPssRE=findViewById(R.id.edtxpassregistro);
 
         BsaveRR= findViewById(R.id.button_continuar);
 
-    }
-
-    public String UserS(){
         BsaveRR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String xiduser = idUser.getText().toString().trim();
-                String xidEmail = idEmail.getText().toString().trim();
+                loginUser();
             }
         });
-        loginUser();
-        return null;
 
     }
 
-    public String EmailS(){
-        String xidEmail;
-        BsaveRR.setOnClickListener(new View.OnClickListener() {
+
+
+    public void loginUser(){
+        String xidemail = idUserRe.getText().toString().trim();
+        String xidpass = idPssRE.getText().toString().trim();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://172.18.79.85:80/Jueves6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .build();
+        LoginService loginService = retrofit.create(LoginService.class);
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail(xidemail);
+        loginRequest.setPass(xidpass);
+        Call<LoginModel> login = loginService.login(loginRequest);
+        login.enqueue(new Callback<LoginModel>() {
             @Override
-            public void onClick(View user) {
-                String xidEmail = idEmail.getText().toString().trim();
+            public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
+                if (response.isSuccessful()){
+                    LoginModel model = response.body();
+                    Toast.makeText(registerActivity.this,model.getEmail(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginModel> call, Throwable t) {
+                Toast.makeText(registerActivity.this,"funciono pero hay un error", Toast.LENGTH_SHORT).show();
             }
         });
-        return null;
     }
 
-    //private void gotoguardar(String xiduser, String xidEmail) {
-        public void loginUser(){
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.18.22:80/Jueves6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            LoginService loginService = retrofit.create(LoginService.class);
-            LoginRequest loginRequest = new LoginRequest();
-            loginRequest.setEmail(UserS());
-            loginRequest.setIdentification(EmailS());
-            Call<LoginModel> login = loginService.login(loginRequest);
-            login.enqueue(new Callback<LoginModel>() {
-                @Override
-                public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
-                    if (response.isSuccessful()){
-                        LoginModel model = response.body();
-                        Toast.makeText(registerActivity.this,model.getFullname(), Toast.LENGTH_SHORT).show();
-                    }
 
-                }
 
-                @Override
-                public void onFailure(Call<LoginModel> call, Throwable t) {
-                    Toast.makeText(registerActivity.this,"funciono pero hay un error", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        }
-
-    //}
 
     //Metodo boton de login
     public void  login (View view) {

@@ -194,7 +194,8 @@
         android:onClick="register"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/flecha"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="2dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView13"

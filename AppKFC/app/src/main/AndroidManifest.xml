@@ -24,10 +24,6 @@
 
         </activity>
         <activity
-<<<<<<< HEAD
-
-=======
->>>>>>> RamaRegistro
             android:name=".TerminosActivity"
             android:exported="false" />
         <activity
@@ -40,6 +36,9 @@
 
         <activity
             android:name=".registerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sesion"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

@@ -1,31 +1,7 @@
 package com.example.appkfc.models;
 
 public class LoginModel {
-    private String identification, fullname, telephone, email;
-
-    public String getIdentification() {
-        return identification;
-    }
-
-    public void setIdentification(String identification) {
-        this.identification = identification;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
+    private String  email, pass;
 
     public String getEmail() {
         return email;
@@ -33,5 +9,13 @@ public class LoginModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 }
