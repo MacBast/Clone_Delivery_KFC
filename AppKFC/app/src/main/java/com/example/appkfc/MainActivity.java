@@ -55,5 +55,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(login);
     }
 
+    //Metodo boton de productos
+    public void  productos (View view){
+        Intent productos = new Intent(this, ProductosActivity.class);
+        startActivity(productos);
+    }
+
 
 }
