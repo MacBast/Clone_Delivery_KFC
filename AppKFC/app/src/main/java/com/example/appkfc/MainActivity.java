@@ -10,10 +10,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.appkfc.Entities.Product;
 import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivityMainBinding;
 import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginRequest;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,19 +26,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    CardView cardView;
-
     private ActivityMainBinding mainBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view= mainBinding.getRoot();
         mainBinding.pedir.setOnClickListener(this);
-
     }
 
 

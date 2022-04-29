@@ -7,642 +7,135 @@
     android:orientation="vertical"
     tools:context=".ProductosActivity">
 
-    <ImageButton
-        android:id="@+id/btnatrasp"
-        android:layout_width="37dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="@string/todo"
-        android:onClick="inicio"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.002"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flecha"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
-
-    <ImageView
-        android:id="@+id/btncanasta"
-        android:layout_width="47dp"
-        android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="@string/todo" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="40dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="270dp"
-        android:layout_marginBottom="28dp"
-        android:fontFamily="@font/alegreya_sc_bold_italic"
-        android:text="@string/kfc"
-        android:textColor="#E82323"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toStartOf="@+id/btncanasta"
-        app:layout_constraintStart_toEndOf="@+id/btnatrasp"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btndirecp"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/white"
-        android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
-        android:text="@string/a_domicilio_lo_m_s_pronto"
-        android:textAlignment="textStart"
-        android:textColor="@color/grayTrans"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:ignore="MissingConstraints,TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="363dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="21dp"
-        android:drawableStart="@drawable/buscar"
-        android:text="@string/que_deseas_comer"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btndirecp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btncanasta"
-        tools:ignore="TouchTargetSizeCheck"
-        android:importantForAutofill="no"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="410dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btndirecp"
-        tools:ignore="SpeakableTextPresentCheck">
+            <TextView
+                android:id="@+id/KFC_Logo"
+                android:layout_width="40dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/alegreya_sc_bold_italic"
+                android:text="@string/kfc"
+                android:textColor="#E82323"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnatrasp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnatrasp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/todo"
+                android:onClick="inicio"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/flecha" />
+
+            <ImageView
+                android:id="@+id/btncanasta"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="280dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/btnatrasp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="363dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="21dp"
+            android:drawableStart="@drawable/buscar"
+            android:importantForAutofill="no"
+            android:text="@string/que_deseas_comer"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btndirecp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/white"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:text="@string/a_domicilio_lo_m_s_pronto"
+            android:textAlignment="textStart"
+            android:textColor="@color/grayTrans"
+            tools:ignore="MissingConstraints,TextContrastCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="410dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="@string/men"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/alitas"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/alitas"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/combo_alitas"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="@string/_11_900"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar1"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white"
-                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/bbqcuadrado"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/bbqcuadrado"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/bbq_al_cuadrado"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="@string/_34_900"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar2"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/comtwister"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/comtwister"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="200dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/combo_twister"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="$15.900"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar3"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/kentuchy"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/kentuchy"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="BIG BOX KENTUCKY"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="$25.900"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar4"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="AGREGAR"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/Recargado"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/Recargado"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/mega_recargado"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="@string/_87_900"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar5"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/sandw"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/sandw"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="200dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="225dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/combo_sandwiche"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="$14.900"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar6"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/trio"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/trio"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="220dp"
-                    android:layout_marginTop="18dp"
-                    android:text="TRIO BOX KENTUCKY"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="$59.900"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar7"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/wowbox"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/wowbox"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="200dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="220dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/wowbox_sandwiche"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="@string/_17_900"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar8"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/postres"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/postres"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="200dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="AVALANCHA OREO"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="@string/_6_900"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar9"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="20dp">
-
-                <ImageView
-                    android:id="@+id/bebidass"
-                    android:layout_width="200dp"
-                    android:layout_height="150dp"
-                    app:srcCompat="@drawable/bebidass"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/bebida"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="230dp"
-                    android:layout_marginTop="50dp"
-                    android:text="$5.700"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/agregar10"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="250dp"
-                    android:layout_marginTop="110dp"
-                    android:background="@color/red"
-                    android:text="@string/agregar"
-                    android:textColor="@color/white" />
-
-            </androidx.cardview.widget.CardView>
-
+                android:layout_height="match_parent" />
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:backgroundTint="@color/grayTrans"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/button_pedir"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="90dp"
-            android:layout_height="69dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:drawableTop="@drawable/ic_baseline_room_service_24"
             android:text="@string/pedirr"
             android:textColor="@color/grayTrans"
             android:textSize="12sp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
-            style="?android:attr/buttonBarButtonStyle" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <Button
             android:id="@+id/button_cupon"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="90dp"
-            android:layout_height="69dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:drawableTop="@drawable/ic_coupon_svgrepo_com"
             android:text="@string/cupones"
@@ -657,9 +150,8 @@
             android:id="@+id/button_perfil"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="90dp"
-            android:layout_height="69dp"
+            android:layout_height="match_parent"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:drawableTop="@drawable/ic_baseline_person_24"
             android:text="@string/perfil"
