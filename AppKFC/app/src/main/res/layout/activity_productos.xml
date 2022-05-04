@@ -319,9 +319,9 @@
                     android:id="@+id/Recargado"
                     android:layout_width="200dp"
                     android:layout_height="150dp"
-                    app:srcCompat="@drawable/Recargado"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:contentDescription="@string/todo" />
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/recargado"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
