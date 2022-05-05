@@ -28,6 +28,7 @@ public class ProductosActivity extends AppCompatActivity {
         setContentView(view);
         productArrayList = new ArrayList<>();
         productAdapter = new ProductAdapter(this, productArrayList);
+        productosBinding.rvPro
     }
 
 
