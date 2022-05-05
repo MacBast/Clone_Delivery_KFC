@@ -10,5 +10,4 @@ import retrofit2.http.POST;
 public interface LoginService {
     @POST("login/login.php")
     Call<LoginModel> login(@Body LoginRequest loginRequest);
-
 }

@@ -32,11 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
         mainBinding.pedir.setOnClickListener(this);
-=======
-       // mainBinding.pedir.setOnClickListener(this);
->>>>>>> 64ab3de51ace4b58c1d8d8267081212bdbf10666
     }
 
 
