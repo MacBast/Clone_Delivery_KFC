@@ -1,6 +1,7 @@
 package com.example.appkfc;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,7 +42,9 @@ public class ProductosActivity extends AppCompatActivity {
         setContentView(view);
         productArrayList = new ArrayList<>();
         productAdapter = new ProductAdapter(this, productArrayList);
-        //productosBinding.rvPro;
+        productosBinding.rvProducts.setHasFixedSize(true);
+        productosBinding.rvProducts.setLayoutManager(new LinearLayoutManager(this));
+        productosBinding.rvProducts.setAdapter(productAdapter);
     }
 
 

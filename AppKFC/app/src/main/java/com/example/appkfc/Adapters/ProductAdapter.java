@@ -35,8 +35,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-
-
+     Product product= productArrayList.get(position);
+     holder.itemBinding.tvDescription.setText(product.getDescription());
+     holder.itemBinding.tvName.setText(product.getName());
+     holder.itemBinding.tvPrice.setText(String.valueOf(product.getPrice()));
     }
 
     @Override
@@ -45,10 +47,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
+        ProductItemBinding itemBinding;
 
         public ProductViewHolder(@NonNull ProductItemBinding itemBinding) {
             super(itemBinding.getRoot());
-            productItemBinding= itemBinding;
+            this.itemBinding= itemBinding;
         }
     }
 }
