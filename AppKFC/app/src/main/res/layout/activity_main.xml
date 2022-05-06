@@ -119,7 +119,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button_domicilio"
+                    android:id="@+id/btnDomi"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"

@@ -1,17 +1,21 @@
 <?php
-require_once(dirname(__DIR__)."../../db/db_config.php");
-$db = new DBConfig();
+
+
+require_once(dirname(__DIR__)."../../db/db_config_product.php");
+$db = new DBConfigPro();
 $dbConnection = $db->connect();
-$users= "";
-if(isset($_GET['user'])){
-    $search= $_GET['search'];
-    $query = "SELECT * FROM users";
-    $users = $dbConnection->query($query)->fetchAll(PDO::FETCH_ASSOC)[0];
+$products= "";
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    $data = json_decode(file_get_contents('php://input'), true); 
+    $search= $data['id_product'];
+    $query = "SELECT * FROM product WHERE id_product='$search'";
+    $products = $dbConnection->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 }else{
-    $query = "SELECT * FROM users";
-    $users = $dbConnection->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    $query = "SELECT * FROM product" ;
+    $products = $dbConnection->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 }
 header('Content-Type: application/json');
-echo json_encode($users);
+echo (json_encode($products[0])); 
+?>

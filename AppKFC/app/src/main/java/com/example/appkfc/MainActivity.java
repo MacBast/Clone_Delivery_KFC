@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainBinding.pedir.setOnClickListener(this);
+//        mainBinding.pedir.setOnClickListener(this);
     }
 
 
@@ -57,6 +57,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent productos = new Intent(this, ProductosActivity.class);
         startActivity(productos);
     }
-
 
 }

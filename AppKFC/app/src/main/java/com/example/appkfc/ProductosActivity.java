@@ -45,6 +45,7 @@ public class ProductosActivity extends AppCompatActivity {
         productosBinding.rvProducts.setHasFixedSize(true);
         productosBinding.rvProducts.setLayoutManager(new LinearLayoutManager(this));
         productosBinding.rvProducts.setAdapter(productAdapter);
+        ListarProducts();
     }
 
 
@@ -54,11 +55,11 @@ public class ProductosActivity extends AppCompatActivity {
         startActivity(inicio);
     }
 
-    //connection DB
+    //connection API
 
     public void ListarProducts(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.207.11/Jueves6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://172.18.86.226/Clone_Delivery_KFC/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
         ListProducts listProducts = retrofit.create(ListProducts.class);
         ListProductsRequest listProductsRequest = new ListProductsRequest();
@@ -69,18 +70,19 @@ public class ProductosActivity extends AppCompatActivity {
             public void onResponse(Call<ListProductsModel> call, Response<ListProductsModel> response) {
                 if (response.isSuccessful()){
                     ListProductsModel model = response.body();
-                    Toast.makeText(ProductosActivity.this,model.getName(), Toast.LENGTH_SHORT).show();
+                    //productArrayList= new ArrayList<>();
+                    Toast.makeText(ProductosActivity.this,"si funciono", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ProductosActivity.this,"error del error", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ListProductsModel> call, Throwable t) {
-                Toast.makeText(ProductosActivity.this,"funciono pero hay un error"+t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductosActivity.this,"error "+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-
-    //listar productos
 
 }
