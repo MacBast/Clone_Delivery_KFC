@@ -1,6 +1,5 @@
 <?php
 
-
 require_once(dirname(__DIR__)."../../db/db_config_product.php");
 $db = new DBConfigPro();
 $dbConnection = $db->connect();

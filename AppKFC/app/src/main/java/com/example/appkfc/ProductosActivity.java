@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.view.View;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProductosActivity extends AppCompatActivity {
 
     ProductAdapter productAdapter;
-    ArrayList<Product> productArrayList;
+    ArrayList productArrayList;
     private ActivityProductosBinding productosBinding;
 
     @Override
@@ -63,14 +64,13 @@ public class ProductosActivity extends AppCompatActivity {
                 .build();
         ListProducts listProducts = retrofit.create(ListProducts.class);
         ListProductsRequest listProductsRequest = new ListProductsRequest();
-
-        Call<ListProductsModel> listar = listProducts.listar(listProductsRequest);
+        ListProductsModel listProductsRequest2 = new ListProductsModel();
+        Call<ListProductsModel> listar = listProducts.listar(listProductsRequest2);
         listar.enqueue(new Callback<ListProductsModel>() {
             @Override
             public void onResponse(Call<ListProductsModel> call, Response<ListProductsModel> response) {
                 if (response.isSuccessful()){
                     ListProductsModel model = response.body();
-                    //productArrayList= new ArrayList<>();
                     Toast.makeText(ProductosActivity.this,"si funciono", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ProductosActivity.this,"error del error", Toast.LENGTH_SHORT).show();

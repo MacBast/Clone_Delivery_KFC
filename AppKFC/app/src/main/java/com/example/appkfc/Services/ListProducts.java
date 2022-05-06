@@ -19,7 +19,7 @@ import retrofit2.http.POST;
 public interface ListProducts {
 
     @POST("list_products/listProductos.php")
-    Call<ListProductsModel> listar(@Body ListProductsRequest listProductsRequest);
+    Call<ListProductsModel> listar(@Body ListProductsModel listProductsRequest);
 
 
 }

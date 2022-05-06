@@ -70,7 +70,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etxBuscar"
             android:layout_width="363dp"
             android:layout_height="35dp"
             android:layout_marginStart="16dp"
