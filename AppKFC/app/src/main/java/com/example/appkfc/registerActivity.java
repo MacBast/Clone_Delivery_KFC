@@ -10,8 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appkfc.Services.LoginService;
+import com.example.appkfc.databinding.ActivityRegisterBinding;
 import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginRequest;
+
+import java.lang.reflect.Array;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,12 +25,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class registerActivity extends AppCompatActivity {
     EditText idUserRe, idPssRE;
     Button BsaveRR;
+    ActivityRegisterBinding binding;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        View view =binding.getRoot();
+        setContentView(view);
 
         idUserRe=findViewById(R.id.edtxcorreoregistro);
         idPssRE=findViewById(R.id.edtxpassregistro);
@@ -46,31 +53,25 @@ public class registerActivity extends AppCompatActivity {
 
 
     public void loginUser(){
-        String xidemail = idUserRe.getText().toString().trim();
-        String xidpass = idPssRE.getText().toString().trim();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.79.85:80/Jueves6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
-                .build();
-        LoginService loginService = retrofit.create(LoginService.class);
-        LoginRequest loginRequest = new LoginRequest();
-        loginRequest.setEmail(xidemail);
-        loginRequest.setPass(xidpass);
-        Call<LoginModel> login = loginService.login(loginRequest);
-        login.enqueue(new Callback<LoginModel>() {
-            @Override
-            public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
-                if (response.isSuccessful()){
-                    LoginModel model = response.body();
-                    Toast.makeText(registerActivity.this,model.getEmail(), Toast.LENGTH_SHORT).show();
-                }
-            }
+        String pass,correo;
 
-            @Override
-            public void onFailure(Call<LoginModel> call, Throwable t) {
-                Toast.makeText(registerActivity.this,"funciono pero hay un error", Toast.LENGTH_SHORT).show();
+        pass= binding.edtxpassregistro.getText().toString();
+        correo= binding.edtxcorreoregistro.getText().toString();
+
+        if(correo.equals("")){
+            Toast.makeText(this, "Debe ingresar correo", Toast.LENGTH_SHORT).show();
+        }else{
+            if (pass.equals("")){
+                Toast.makeText(this, "debe ingresar password", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(registerActivity.this, register2.class);
+                intent.putExtra("correo",correo);
+                intent.putExtra("pass",pass);
+                startActivity(intent);
             }
-        });
+        }
     }
 
 

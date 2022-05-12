@@ -1,6 +1,7 @@
 package com.example.appkfc.models;
 
 public class ListProductsRequest {
+
     public String id_product, name, price, image;
 
     public String getId_product() {
@@ -34,4 +35,5 @@ public class ListProductsRequest {
     public void setImage(String image) {
         this.image = image;
     }
+
 }

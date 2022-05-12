@@ -24,7 +24,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding mainBinding;
 
@@ -33,18 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        mainBinding.pedir.setOnClickListener(this);
+
     }
 
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.pedir:
-                Intent intent = new Intent(this,LoginActivity.class);
-                startActivity(intent);
-                break;
-        }
-    }
 
     //Metodo boton de login
     public void  login (View view){

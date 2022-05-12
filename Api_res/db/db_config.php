@@ -2,7 +2,7 @@
 class DBConfig{
     private $user = "root";
     private $password ="";
-    private $dbname="delivery_app";
+    private $dbname="product";
     private $host = "localhost";
 
     public function connect(){
