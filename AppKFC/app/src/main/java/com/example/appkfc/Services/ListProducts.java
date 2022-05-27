@@ -2,8 +2,9 @@ package com.example.appkfc.Services;
 
 import android.widget.Toast;
 
-import com.example.appkfc.models.ListProductsModel;
-import com.example.appkfc.models.ListProductsRequest;
+
+import com.example.appkfc.models.ListProductsModel1;
+import com.example.appkfc.models.ListProductsRequest1;
 import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginRequest;
 import com.example.appkfc.sesion;
@@ -23,13 +24,13 @@ import retrofit2.http.Path;
 public interface ListProducts {
 
     @GET("list_products/listProductos.php")
-    Call<ArrayList<ListProductsModel>> listar();
+    Call<ArrayList<ListProductsModel1>> listar();
 
     @POST("list_products/compraproducts.php")
-    Call<String> compra(@Body ListProductsModel data);
+    Call<String> compra(@Body ListProductsModel1 data);
 
     @GET("list_products/listCompras.php")
-    Call<ArrayList<ListProductsModel>> listarCompra();
+    Call<ArrayList<ListProductsModel1>> listarCompra();
 
     @GET("list_products/borracompra.php")
     Call<String> Comprass();// cambiar***

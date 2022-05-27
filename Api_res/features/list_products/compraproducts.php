@@ -22,7 +22,7 @@ values ('$id','$name','$descripcion','$price','$image')";
 $products = $dbConnection->query($query);
 
 header('Content-Type: application/json');
-echo (json_encode("compra exitosa"));
+echo (json_encode("Añadida al carrito"));
     }else{
 
     echo (json_encode("Error"));
