@@ -10,9 +10,6 @@ if( $_SERVER['REQUEST_METHOD'] == "POST"){
     $dbConnection = $db->connect();
     $query = "SELECT * FROM usuarios WHERE email='$emailApi' AND contraseña='$passApi'";
     $users = $dbConnection->query($query)->fetchAll(PDO::FETCH_ASSOC);
-
-    
-    
     
     header('Content-Type: application/json');
     echo(json_encode($users[0]));
