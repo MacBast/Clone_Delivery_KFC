@@ -11,12 +11,13 @@ import android.widget.Toast;
 
 import com.example.appkfc.Adapters.ProductAdapter;
 import com.example.appkfc.Entities.Product;
-import com.example.appkfc.Services.ListProducts;
+import com.example.appkfc.Services.ListProducts1;
 import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivityMainBinding;
 import com.example.appkfc.databinding.ActivityProductosBinding;
-import com.example.appkfc.models.ListProductsModel;
-import com.example.appkfc.models.ListProductsRequest;
+
+import com.example.appkfc.models.ListProductsModel1;
+
 import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginRequest;
 
@@ -31,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProductosActivity extends AppCompatActivity {
 
     ProductAdapter productAdapter;
-    ArrayList<ListProductsModel> productArrayList1;
+    ArrayList<ListProductsModel1> productArrayList1;
     ArrayList productArrayList;
     Retrofit retrofit;
     private ActivityProductosBinding productosBinding;
@@ -49,7 +50,7 @@ public class ProductosActivity extends AppCompatActivity {
         productosBinding.rvProducts.setLayoutManager(new LinearLayoutManager(this));
        productosBinding.rvProducts.setAdapter(productAdapter);
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         productosBinding.btndirecp.setOnClickListener(new View.OnClickListener() {
@@ -74,21 +75,24 @@ public class ProductosActivity extends AppCompatActivity {
 
     public void ListarProducts(){
 
-        ListProducts listProducts = retrofit.create(ListProducts.class);
-        Call<ArrayList<ListProductsModel>> listar = listProducts.listar();
-        listar.enqueue(new Callback<ArrayList<ListProductsModel>>() {
+        ListProducts1 listProducts = retrofit.create(ListProducts1.class);
+        Call<ArrayList<ListProductsModel1>> listar = listProducts.listar();
+        listar.enqueue(new Callback<ArrayList<ListProductsModel1>>() {
             @Override
-            public void onResponse(Call<ArrayList<ListProductsModel>> call, Response<ArrayList<ListProductsModel>> response) {
-
-
-                for (int i = 0; i<response.body().size(); i++){
-                    productArrayList.add(response.body().get(i));
+            public void onResponse(Call<ArrayList<ListProductsModel1>> call, Response<ArrayList<ListProductsModel1>> response) {
+                if (response.isSuccessful()) {
+                    for (int i = 0; i < response.body().size(); i++) {
+                        productArrayList.add(response.body().get(i));
+                    }
+                    productAdapter.notifyDataSetChanged();
                 }
-                productAdapter.notifyDataSetChanged();
+                else{
+                    Toast.makeText(ProductosActivity.this, ""+response.toString(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<ArrayList<ListProductsModel>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<ListProductsModel1>> call, Throwable t) {
             }
         });
     }

@@ -7,14 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.appkfc.Services.ListProducts;
+
 import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivityRegister2Binding;
-import com.example.appkfc.models.ListProductsModel;
-import com.example.appkfc.models.ListProductsRequest;
+
+
+import com.example.appkfc.models.ListProductsRequest1;
 import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginRequest;
-import com.example.appkfc.models.RegistroModel;
+import com.example.appkfc.models.RegistroModel1;
 
 import java.util.ArrayList;
 
@@ -25,10 +26,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class register2 extends AppCompatActivity {
-    private RegistroModel primer_registroC,primer_registroP;
+    private RegistroModel1 primer_registroC,primer_registroP;
     Retrofit retrofit;
     ActivityRegister2Binding binding;
-    ListProductsRequest list;
+    ListProductsRequest1 list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class register2 extends AppCompatActivity {
         setContentView(view);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
     }

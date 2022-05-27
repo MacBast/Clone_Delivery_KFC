@@ -11,13 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.appkfc.Compra;
 import com.example.appkfc.Entities.Product;
 import com.example.appkfc.MainActivity;
 import com.example.appkfc.ProductosActivity;
-import com.example.appkfc.Services.ListProducts;
+
+import com.example.appkfc.Services.ListProducts1;
 import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ProductItemBinding;
-import com.example.appkfc.models.ListProductsModel;
+
+import com.example.appkfc.models.ListProductsModel1;
 import com.example.appkfc.models.LoginRequest;
 import com.example.appkfc.register2;
 import com.example.appkfc.sesion;
@@ -34,16 +37,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     private Context context;
     private ProductItemBinding productItemBinding;
-    private ArrayList<ListProductsModel> productArrayList;
+    private ArrayList<ListProductsModel1> productArrayList;
     private ArrayList producto;
     private String Url;
     private Retrofit retrofit;
 
-    public ProductAdapter(ProductosActivity context, ArrayList<ListProductsModel> productArrayList){
+    public ProductAdapter(ProductosActivity context, ArrayList<ListProductsModel1> productArrayList){
         this.context=context;
         this.productArrayList= productArrayList;
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
     @NonNull
@@ -55,7 +58,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-     ListProductsModel product= productArrayList.get(position);
+     ListProductsModel1 product= productArrayList.get(position);
 
      holder.itemBinding.NombreFroducto.setText(product.getName());
      holder.itemBinding.Descripcion.setText(product.getDescripcion());
@@ -85,14 +88,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         }
     }
 
-    public void comprar(ListProductsModel product){
+    public void comprar(ListProductsModel1 product){
 
-        ListProducts listProducts = retrofit.create(ListProducts.class);
+        ListProducts1 listProducts = retrofit.create(ListProducts1.class);
         Call<String> listar = listProducts.compra(product);
+       // Toast.makeText(context, ""+product.getId_product(), Toast.LENGTH_SHORT).show();
         listar.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-
+                Toast.makeText(context, ""+response.body(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

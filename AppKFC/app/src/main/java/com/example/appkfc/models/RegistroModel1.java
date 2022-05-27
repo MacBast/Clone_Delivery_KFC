@@ -2,7 +2,7 @@ package com.example.appkfc.models;
 
 import java.io.Serializable;
 
-public class RegistroModel implements Serializable {
+public class RegistroModel1 implements Serializable {
     String pass,correo;
 
     public String getPass() {

@@ -64,7 +64,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="¿Tienes un cupón?" />
+            android:text="¿Tienes un cupón?"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,19 +75,22 @@
 
             <EditText
                 android:id="@+id/etcupon"
-                android:layout_width="163dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:ems="10"
+                android:hint="Ingresa el cupon"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                tools:ignore="TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/btnagregar"
                 android:layout_width="160dp"
-                android:layout_height="37dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="AGREGAR" />
+                android:background="@color/red"
+                android:text="AGREGAR"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -107,7 +112,9 @@
         android:layout_width="132dp"
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
+        android:background="@color/red"
         android:text="Comprar"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

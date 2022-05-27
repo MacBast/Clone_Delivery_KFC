@@ -11,9 +11,9 @@ import android.widget.Toast;
 
 import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivitySesionBinding;
-import com.example.appkfc.models.LoginDataModel;
+import com.example.appkfc.models.LoginDataModel1;
 import com.example.appkfc.models.LoginModel;
-import com.example.appkfc.models.LoginModel2;
+import com.example.appkfc.models.LoginModel21;
 import com.example.appkfc.models.LoginRequest;
 
 import retrofit2.Call;
@@ -51,19 +51,19 @@ public class sesion extends AppCompatActivity {
         String xidpass =binding.editTextTextPassword.getText().toString();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        LoginDataModel loginDataModel = new LoginDataModel();
+        LoginDataModel1 loginDataModel = new LoginDataModel1();
         loginDataModel.setEmail(xidemail);
         loginDataModel.setPass(xidpass);
         LoginService loginService = retrofit.create(LoginService.class);
-        Call<LoginModel2> login = loginService.login(loginDataModel);
-        login.enqueue(new Callback<LoginModel2>() {
+        Call<LoginModel21> login = loginService.login(loginDataModel);
+        login.enqueue(new Callback<LoginModel21>() {
             @Override
-            public void onResponse(Call<LoginModel2> call, Response<LoginModel2> response) {
+            public void onResponse(Call<LoginModel21> call, Response<LoginModel21> response) {
 
-                LoginModel2 model = response.body();
+                LoginModel21 model = response.body();
 
                     try {
 
@@ -83,7 +83,7 @@ public class sesion extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<LoginModel2> call, Throwable t) {
+            public void onFailure(Call<LoginModel21> call, Throwable t) {
                 Toast.makeText(sesion.this,"funciono pero hay un error" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

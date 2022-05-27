@@ -1,6 +1,6 @@
 package com.example.appkfc.models;
 
-public class LoginDataModel {
+public class LoginDataModel1 {
 
     String email,pass;
 

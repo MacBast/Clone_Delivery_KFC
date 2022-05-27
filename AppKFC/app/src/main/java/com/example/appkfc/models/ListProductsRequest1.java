@@ -1,6 +1,6 @@
 package com.example.appkfc.models;
 
-public class ListProductsRequest {
+public class ListProductsRequest1 {
 
     public String id_product, name, price, image;
 

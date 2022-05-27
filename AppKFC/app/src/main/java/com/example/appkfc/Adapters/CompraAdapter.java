@@ -14,7 +14,8 @@ import com.bumptech.glide.Glide;
 import com.example.appkfc.Compra;
 import com.example.appkfc.databinding.CompraItemBinding;
 import com.example.appkfc.databinding.ProductItemBinding;
-import com.example.appkfc.models.ListProductsModel;
+
+import com.example.appkfc.models.ListProductsModel1;
 
 import java.util.ArrayList;
 
@@ -25,17 +26,17 @@ public class CompraAdapter extends RecyclerView.Adapter<CompraAdapter.CompraView
 
 private Context context;
 private CompraItemBinding productItemBinding;
-private ArrayList<ListProductsModel> productArrayList;
+private ArrayList<ListProductsModel1> productArrayList;
 private String url,enpoint;
 private Retrofit retrofit;
 private ViewBinding jb;
 
 
-public CompraAdapter(Context context, ArrayList<ListProductsModel> productArrayList){
+public CompraAdapter(Context context, ArrayList<ListProductsModel1> productArrayList){
         this.context = context;
         this.productArrayList = productArrayList;
         retrofit = new Retrofit.Builder()
-        .baseUrl("http://192.168.1.6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+        .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
         .build();
         }
 
@@ -52,7 +53,7 @@ public CompraViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewTy
 @Override
 public void onBindViewHolder(@NonNull CompraViewHolder holder, int position) {
 
-        ListProductsModel product = productArrayList.get(position);
+        ListProductsModel1 product = productArrayList.get(position);
 
         Toast.makeText(context, product.getId_product(), Toast.LENGTH_SHORT).show();
         holder.itemBinding.NombreFroducto.setText(product.getName());

@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.appkfc.Adapters.CompraAdapter;
-import com.example.appkfc.Adapters.ProductAdapter;
-import com.example.appkfc.Services.ListProducts;
+import com.example.appkfc.Services.ListProducts1;
 import com.example.appkfc.databinding.ActivityCompraBinding;
-import com.example.appkfc.models.ListProductsModel;
+
+import com.example.appkfc.models.ListProductsModel1;
 
 import java.util.ArrayList;
 
@@ -41,7 +41,7 @@ public class Compra extends AppCompatActivity {
         productosBinding.rvProducts.setLayoutManager(new LinearLayoutManager(this));
         productosBinding.rvProducts.setAdapter(productAdapter);
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.6/Api_res/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         productosBinding.btnCompra.setOnClickListener(new View.OnClickListener() {
@@ -59,20 +59,21 @@ public class Compra extends AppCompatActivity {
     }
     public void ListarCompra(){
 
-        ListProducts listProducts = retrofit.create(ListProducts.class);
-        Call<ArrayList<ListProductsModel>> listar = listProducts.listarCompra();
-        listar.enqueue(new Callback<ArrayList<ListProductsModel>>() {
+        ListProducts1 listProducts = retrofit.create(ListProducts1.class);
+        Call<ArrayList<ListProductsModel1>> listar = listProducts.listarCompra();
+        listar.enqueue(new Callback<ArrayList<ListProductsModel1>>() {
             @Override
-            public void onResponse(Call<ArrayList<ListProductsModel>> call, Response<ArrayList<ListProductsModel>> response) {
+            public void onResponse(Call<ArrayList<ListProductsModel1>> call, Response<ArrayList<ListProductsModel1>> response) {
                 for (int i = 0; i<response.body().size(); i++){
                     productArrayList.add(response.body().get(i));
                 }
                 productAdapter.notifyDataSetChanged();
+                //Toast.makeText(Compra.this, "..."+response.body(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(Call<ArrayList<ListProductsModel>> call, Throwable t) {
-
+            public void onFailure(Call<ArrayList<ListProductsModel1>> call, Throwable t) {
+                Toast.makeText(Compra.this, ""+t, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -82,8 +83,8 @@ public class Compra extends AppCompatActivity {
 
     public void ProductosComprasdos(){
 
-        ListProducts listProducts = retrofit.create(ListProducts.class);
-        Call<String> Borrar = listProducts.Comprass();
+        ListProducts1 listProducts1 = retrofit.create(ListProducts1.class);
+        Call<String> Borrar = listProducts1.Comprass();
         Borrar.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
