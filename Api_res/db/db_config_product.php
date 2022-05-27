@@ -1,9 +1,9 @@
 <?php
 class DBConfigPro{
-    private $user = "root";
-    private $password ="";
+    private $user = "admin";
+    private $password ="Col2028..";
     private $dbname="product";
-    private $host = "localhost";
+    private $host = "database-1.csvoeg1cxn8s.us-east-1.rds.amazonaws.com";
 
     public function connect(){
         try{
