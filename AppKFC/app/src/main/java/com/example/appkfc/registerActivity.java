@@ -15,6 +15,8 @@ import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginRequest;
 
 import java.lang.reflect.Array;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,6 +29,23 @@ public class registerActivity extends AppCompatActivity {
     Button BsaveRR;
     ActivityRegisterBinding binding;
 
+/*
+    public class Main {
+
+        public void main(String[] args) {
+
+            // Patrón para validar el email
+
+
+            if (mather.find() == true) {
+                System.out.println("El email ingresado es válido.");
+            } else {
+                System.out.println("El email ingresado es inválido.");
+            }
+        }
+
+    }
+*/
 
 
     @Override
@@ -53,25 +72,36 @@ public class registerActivity extends AppCompatActivity {
 
 
     public void loginUser(){
-
         String pass,correo;
 
         pass= binding.edtxpassregistro.getText().toString();
         correo= binding.edtxcorreoregistro.getText().toString();
 
-        if(correo.equals("")){
+        Pattern pattern = Pattern
+                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+
+        // El email a validar
+        //correo = "info@gamil.com";
+
+        Matcher mather = pattern.matcher(correo);
+        if (mather.find() == true && !pass.equals("")){
+            Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(registerActivity.this, register2.class);
+            intent.putExtra("correo",correo);
+            intent.putExtra("pass",pass);
+            startActivity(intent);
+        }else{
+            Toast.makeText(this, "correo incorrecto", Toast.LENGTH_SHORT).show();
+        }
+
+       /* if(correo.equals("")){
             Toast.makeText(this, "Debe ingresar correo", Toast.LENGTH_SHORT).show();
         }else{
             if (pass.equals("")){
                 Toast.makeText(this, "debe ingresar password", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(this, "Datos registrados", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(registerActivity.this, register2.class);
-                intent.putExtra("correo",correo);
-                intent.putExtra("pass",pass);
-                startActivity(intent);
             }
-        }
+        }*/
     }
 
 

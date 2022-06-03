@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/nombre"
+        android:id="@+id/nombreR2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -59,10 +59,10 @@
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreR2" />
 
     <EditText
-        android:id="@+id/apellido"
+        android:id="@+id/apellidoR2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -86,7 +86,7 @@
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellido" />
+        app:layout_constraintTop_toBottomOf="@+id/apellidoR2" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -118,7 +118,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/number"
+            android:id="@+id/celularR2"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
@@ -131,7 +131,7 @@
     </LinearLayout>
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/terminosCondicionesR2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -144,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/correosPromoR2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -154,10 +154,10 @@
         android:textColor="@color/grayTrans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/terminosCondicionesR2" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/notificacionesR2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -167,10 +167,10 @@
         android:textColor="@color/grayTrans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/correosPromoR2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/crearCuentaR2"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginStart="20dp"
@@ -184,7 +184,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/notificacionesR2" />
 
     <ImageButton
         android:id="@+id/imageButton2"
