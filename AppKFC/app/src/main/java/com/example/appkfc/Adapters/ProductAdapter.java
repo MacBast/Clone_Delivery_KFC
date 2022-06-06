@@ -1,7 +1,6 @@
 package com.example.appkfc.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.appkfc.Compra;
-import com.example.appkfc.Entities.Product;
-import com.example.appkfc.MainActivity;
 import com.example.appkfc.ProductosActivity;
 
 import com.example.appkfc.Services.ListProducts1;
-import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ProductItemBinding;
 
 import com.example.appkfc.models.ListProductsModel1;
-import com.example.appkfc.models.LoginRequest;
-import com.example.appkfc.register2;
-import com.example.appkfc.sesion;
 
 import java.util.ArrayList;
 

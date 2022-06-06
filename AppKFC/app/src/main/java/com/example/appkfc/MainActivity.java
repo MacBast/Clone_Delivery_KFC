@@ -1,28 +1,12 @@
 package com.example.appkfc;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.appkfc.Entities.Product;
-import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivityMainBinding;
-import com.example.appkfc.models.LoginModel;
-import com.example.appkfc.models.LoginRequest;
-
-import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 

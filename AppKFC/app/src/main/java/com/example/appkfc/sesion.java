@@ -12,9 +12,7 @@ import android.widget.Toast;
 import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivitySesionBinding;
 import com.example.appkfc.models.LoginDataModel1;
-import com.example.appkfc.models.LoginModel;
 import com.example.appkfc.models.LoginModel21;
-import com.example.appkfc.models.LoginRequest;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -77,14 +75,14 @@ public class sesion extends AppCompatActivity {
                             Toast.makeText(sesion.this, "datos incorrectos", Toast.LENGTH_SHORT).show();
                         }
                     }catch (Exception e){
-
+                        Toast.makeText(sesion.this, "Error del catch"+ e, Toast.LENGTH_SHORT).show();
                     }
                    /* */
             }
 
             @Override
             public void onFailure(Call<LoginModel21> call, Throwable t) {
-                Toast.makeText(sesion.this,"funciono pero hay un error" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(sesion.this,"Error" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

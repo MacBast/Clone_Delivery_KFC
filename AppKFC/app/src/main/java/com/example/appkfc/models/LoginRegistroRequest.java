@@ -1,7 +1,7 @@
 package com.example.appkfc.models;
 
-public class LoginRequest {
-    private String  email, pass,nombre,id;
+public class LoginRegistroRequest {
+    private String  email, pass,id;
 
     public String getEmail() {
         return email;
@@ -17,14 +17,6 @@ public class LoginRequest {
 
     public void setPass(String pass) {
         this.pass = pass;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getId() {

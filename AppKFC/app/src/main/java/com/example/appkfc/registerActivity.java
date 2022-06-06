@@ -9,20 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.appkfc.Services.LoginService;
 import com.example.appkfc.databinding.ActivityRegisterBinding;
-import com.example.appkfc.models.LoginModel;
-import com.example.appkfc.models.LoginRequest;
 
-import java.lang.reflect.Array;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class registerActivity extends AppCompatActivity {
     EditText idUserRe, idPssRE;

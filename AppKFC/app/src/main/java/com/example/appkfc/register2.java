@@ -13,11 +13,8 @@ import com.example.appkfc.databinding.ActivityRegister2Binding;
 
 
 import com.example.appkfc.models.ListProductsRequest1;
-import com.example.appkfc.models.LoginModel;
-import com.example.appkfc.models.LoginRequest;
+import com.example.appkfc.models.LoginRegistroRequest;
 import com.example.appkfc.models.RegistroModel1;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +36,7 @@ public class register2 extends AppCompatActivity {
         setContentView(view);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://18.209.8.24/features").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
     }
@@ -54,7 +51,7 @@ public class register2 extends AppCompatActivity {
         pass = primer_registroP;
 
 
-        LoginRequest usuario = new LoginRequest();
+        LoginRegistroRequest usuario = new LoginRegistroRequest();
         usuario.setEmail(correo);
         usuario.setPass(pass);
         LoginService registro = retrofit.create(LoginService.class);
@@ -70,7 +67,7 @@ public class register2 extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                    Toast.makeText(register2.this, "error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(register2.this, "error"+t, Toast.LENGTH_SHORT).show();
 
             }
         });

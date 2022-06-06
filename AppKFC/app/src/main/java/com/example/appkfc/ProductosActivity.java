@@ -5,21 +5,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.appkfc.Adapters.ProductAdapter;
-import com.example.appkfc.Entities.Product;
 import com.example.appkfc.Services.ListProducts1;
-import com.example.appkfc.Services.LoginService;
-import com.example.appkfc.databinding.ActivityMainBinding;
 import com.example.appkfc.databinding.ActivityProductosBinding;
 
 import com.example.appkfc.models.ListProductsModel1;
-
-import com.example.appkfc.models.LoginModel;
-import com.example.appkfc.models.LoginRequest;
 
 import java.util.ArrayList;
 

@@ -10,10 +10,10 @@ if( $_SERVER['REQUEST_METHOD'] == "POST"){
 
     $db =new DBConfig();
     $dbConnection = $db->connect();
-    $query = "INSERT INTO usuarios (email,contraseña) values ('$emailApi','$passApi')";
+    $query = "INSERT INTO usuarios (email,pass) values ('$emailApi','$passApi')";
     $users = $dbConnection->query($query);
     header('Content-Type: application/json');
     echo (json_encode("registro exitoso"));
 }else{
-    echo (json_encode("Error"));
+    echo (json_encode("Error en registar en api"));
 }
