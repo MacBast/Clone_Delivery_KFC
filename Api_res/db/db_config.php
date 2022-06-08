@@ -1,5 +1,6 @@
 <?php
 class DBConfig{
+    
     private $user = "admin";
     private $password ="Col2028..";
     private $dbname="products";
