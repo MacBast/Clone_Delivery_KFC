@@ -43,7 +43,7 @@ public class ProductosActivity extends AppCompatActivity {
         productosBinding.rvProducts.setLayoutManager(new LinearLayoutManager(this));
        productosBinding.rvProducts.setAdapter(productAdapter);
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://34.234.64.174/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         productosBinding.btndirecp.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +74,7 @@ public class ProductosActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<ListProductsModel1>> call, Response<ArrayList<ListProductsModel1>> response) {
                 if (response.isSuccessful()) {
+                    Toast.makeText(ProductosActivity.this, ""+response.body().size(), Toast.LENGTH_SHORT).show();
                     for (int i = 0; i < response.body().size(); i++) {
                         productArrayList.add(response.body().get(i));
                     }
@@ -86,6 +87,7 @@ public class ProductosActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ArrayList<ListProductsModel1>> call, Throwable t) {
+                Toast.makeText(ProductosActivity.this, ""+t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

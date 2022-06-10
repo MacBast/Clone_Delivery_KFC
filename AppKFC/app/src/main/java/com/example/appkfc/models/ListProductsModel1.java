@@ -2,13 +2,14 @@ package com.example.appkfc.models;
 
 public class ListProductsModel1 {
 
-    private String id_product, name, price, image,descripcion;
+    private String name, price, image,descripcion;
+    private  int id_product;
 
-    public String getId_product() {
+    public int getId_product() {
         return id_product;
     }
 
-    public void setId_product(String id_product) {
+    public void setId_product(int id_product) {
         this.id_product = id_product;
     }
 

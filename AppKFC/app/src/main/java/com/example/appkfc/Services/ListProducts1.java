@@ -21,5 +21,5 @@ public interface ListProducts1 {
     Call<ArrayList<ListProductsModel1>> listarCompra();
 
     @GET("list_products/borracompra.php")
-    Call<String> Comprass();// cambiar***
+    Call<String> Comprass();
 }

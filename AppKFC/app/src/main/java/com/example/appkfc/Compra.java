@@ -34,14 +34,15 @@ public class Compra extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         productosBinding = ActivityCompraBinding.inflate(getLayoutInflater());
         View view = productosBinding.getRoot();
-    setContentView(view);
+        setContentView(view);
         productArrayList = new ArrayList<>();
         productAdapter = new CompraAdapter( this,productArrayList);
        productosBinding.rvProducts.setHasFixedSize(true);
         productosBinding.rvProducts.setLayoutManager(new LinearLayoutManager(this));
         productosBinding.rvProducts.setAdapter(productAdapter);
+
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://54.197.21.179/features/").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://34.234.64.174/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         productosBinding.btnCompra.setOnClickListener(new View.OnClickListener() {

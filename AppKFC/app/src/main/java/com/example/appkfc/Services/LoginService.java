@@ -13,8 +13,6 @@ public interface LoginService {
     @POST("login/login.php")
     Call<LoginModel21> login(@Body LoginDataModel1 loginRequest);
 
-    @POST("login/register.php")
-    Call<String>register(@Body LoginRegistroRequest loginRegistroRequest);
 
 
    /// @POST("login/register.php")

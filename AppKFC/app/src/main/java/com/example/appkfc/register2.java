@@ -1,14 +1,19 @@
 package com.example.appkfc;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
 import com.example.appkfc.Services.LoginService;
+import com.example.appkfc.Services.RegisterService;
+import com.example.appkfc.databinding.ActivityCompraBinding;
 import com.example.appkfc.databinding.ActivityRegister2Binding;
 
 
@@ -36,8 +41,21 @@ public class register2 extends AppCompatActivity {
         setContentView(view);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://18.209.8.24/features").addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("http://34.234.64.174/features/").addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        binding.btncrearCuentaR2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(register2.this, "soy el boton", Toast.LENGTH_SHORT).show();
+                /*LoginRegistroRequest usuario = new LoginRegistroRequest();
+                usuario.set(correo);
+                usuario.setPass(pass);
+                RegisterService registro = retrofit.create(RegisterService.class);
+                Call<String> register = registro.register(usuario);*/
+
+            }
+        });
 
     }
 
@@ -50,19 +68,18 @@ public class register2 extends AppCompatActivity {
         correo = primer_registroC;
         pass = primer_registroP;
 
-
         LoginRegistroRequest usuario = new LoginRegistroRequest();
         usuario.setEmail(correo);
         usuario.setPass(pass);
-        LoginService registro = retrofit.create(LoginService.class);
+        RegisterService registro = retrofit.create(RegisterService.class);
         Call<String> register = registro.register(usuario);
         register.enqueue(new Callback<String>() {
             @Override
                 public void onResponse(Call<String> call, Response<String> response) {
-                Toast.makeText(register2.this, response.body(), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(register2.this,sesion.class);
-                startActivity(intent);
+                Toast.makeText(register2.this, response.body(), Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(register2.this,sesion.class);
+                //startActivity(intent);
             }
 
             @Override
@@ -71,12 +88,6 @@ public class register2 extends AppCompatActivity {
 
             }
         });
-
-
-
-     /*   Toast.makeText(register2.this, ""+ correo, Toast.LENGTH_SHORT).show();
-        Intent register = new Intent(this,sesion.class);
-        startActivity(register);*/
-
     }
+
 }

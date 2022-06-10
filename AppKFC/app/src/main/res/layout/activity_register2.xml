@@ -170,15 +170,15 @@
         app:layout_constraintTop_toBottomOf="@+id/correosPromoR2" />
 
     <Button
-        android:id="@+id/crearCuentaR2"
+        android:id="@+id/btncrearCuentaR2"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/red"
-        android:text="Crear mi cuenta"
         android:onClick="register"
+        android:text="Crear mi cuenta"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"
